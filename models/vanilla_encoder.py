@@ -6,7 +6,7 @@ def model(inputs, z_dim=100, is_train=True, reuse=False):
 	w_init = tf.random_normal_initializer(stddev=0.02)
 	gamma_init = tf.random_normal_initializer(1., 0.02)
 	with tf.variable_scope('encoder', reuse=reuse):
-		tl.layers.set_name_reuse(reuse)
+		#tl.layers.set_name_reuse(reuse)
 		network_in = tl.layers.InputLayer(inputs, name='d/in')
 		network_h0 = tl.layers.Conv2dLayer(network_in, act=lambda x: tl.act.lrelu(x, 0.2),
 											W_init=w_init,

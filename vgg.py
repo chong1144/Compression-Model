@@ -35,7 +35,7 @@ class VGG(object):
 		current_layer = input_image
 		for i, name in enumerate(self.LAYERS):
 			if _is_conv_layer(name):
-				kernels, bias = self.weights[i][0][0][0]
+				kernels, bias = self.weights[i][0][0][0][0]
 				# matconvnet: weights are [width, height, in_channels, out_channels]
 				# tensorflow: weights are [height, width, in_channels, out_channels]
 				kernels = np.transpose(kernels, (1, 0, 2, 3))
